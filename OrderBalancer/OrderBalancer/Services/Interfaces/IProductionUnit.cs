@@ -4,6 +4,7 @@ namespace OrderBalancer.Services.Interfaces
 {
     public interface IProductionUnit
     {
+        bool IsBusy { get; }
 
         void AddOrder(Order order);
 
