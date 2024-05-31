@@ -5,7 +5,7 @@ namespace OrderBalancer.Entities
     {
         public int Id { get; set; }
 
-        public string Desctiption { get; set; }
+        public string Description { get; set; }
 
         public List<Food> Foods { get; set; }
 
