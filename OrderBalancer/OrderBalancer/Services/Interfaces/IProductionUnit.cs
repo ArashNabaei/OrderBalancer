@@ -5,11 +5,11 @@ namespace OrderBalancer.Services.Interfaces
     public interface IProductionUnit
     {
 
-        Task AddOrder(Order order);
+        void AddOrder(Order order);
 
-        Task<bool> CanTakeOrder();
+        bool CanTakeOrder();
 
-        Task<string> Status();
+        string Status();
 
         Task Ordering();
 
