@@ -1,5 +1,6 @@
-﻿
-namespace OrderBalancer.Entities
+﻿using OrderBalancer.Entities;
+
+namespace OrderBalancer.Services.Implements
 {
     public class ProductionUnit
     {
