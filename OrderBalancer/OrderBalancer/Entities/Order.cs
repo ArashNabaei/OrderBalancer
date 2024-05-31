@@ -11,5 +11,12 @@ namespace OrderBalancer.Entities
 
         public int ProcessingTime { get; set; }
 
+        public Order(int id, List<Food> foods, int processingTime)
+        {
+            Foods = foods;
+            Id = id;
+            ProcessingTime = processingTime;
+        }
+
     }
 }

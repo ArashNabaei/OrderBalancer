@@ -9,5 +9,11 @@ namespace OrderBalancer.Entities
 
         public float Price { get; set; }
 
+        public Food(string name, float price)
+        {
+            Name = name;
+            Price = price;
+        }
+
     }
 }

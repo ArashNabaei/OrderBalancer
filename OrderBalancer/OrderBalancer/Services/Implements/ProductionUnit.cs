@@ -18,6 +18,13 @@ namespace OrderBalancer.Services.Implements
 
         private Order? CurrentOrder { get; set; }
 
+        public ProductionUnit(int id, string name, int capacity)
+        {
+            Id = id;
+            Name = name;
+            Capacity = capacity;
+        }
+
         public void AddOrder(Order order)
         {
             if (!CanTakeOrder())

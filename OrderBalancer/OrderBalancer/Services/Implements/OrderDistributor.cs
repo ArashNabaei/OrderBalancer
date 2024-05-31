@@ -10,9 +10,8 @@ namespace OrderBalancer.Services.Implements
 
         private int _currentUnit { get; set; }
 
-        public OrderDistributor(List<IProductionUnit> productionUnits, int currentUnit)
+        public OrderDistributor(List<IProductionUnit> productionUnits)
         {
-            _currentUnit = currentUnit;
             _productionUnits = productionUnits;
         }
 
