@@ -23,7 +23,7 @@ namespace OrderBalancer.Services.Implements
 
             unit.AddOrder(order);
 
-            if (!unit.IsBusy)
+            if (unit.IsBusy)
                 await unit.Ordering();
         }
 

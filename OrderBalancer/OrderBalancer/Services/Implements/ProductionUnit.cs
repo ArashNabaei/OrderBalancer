@@ -28,11 +28,12 @@ namespace OrderBalancer.Services.Implements
 
         public void AddOrder(Order order)
         {
-            if (!CanTakeOrder())
-                throw new Exception("Production Unit is busy, please try later.");
+            if (CanTakeOrder())
+            {
+                CurrentOrder = order;
+                IsBusy = true;
+            }
 
-            CurrentOrder = order;
-            IsBusy = true;
         }
 
         public bool CanTakeOrder()
