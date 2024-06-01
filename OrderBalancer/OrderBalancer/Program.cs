@@ -1,12 +1,11 @@
 ﻿using OrderBalancer.Entities;
 using OrderBalancer.Services.Implements;
-using OrderBalancer.Services.Interfaces;
 
 public class Program
 {
     public static async Task Main(string[] args)
     {
-        var units = new List<IProductionUnit>
+        var productionUnits = new List<ProductionUnit>
         {
             new ProductionUnit(1, "Unit 1", 1),
             new ProductionUnit(2, "Unit 2", 1),
@@ -21,11 +20,11 @@ public class Program
             new Order(4, new List<Food> { new Food("Pasta", 12) }, 3)
         };
 
-        var distributor = new OrderDistributor(units);
+        var distributor = new OrderDistributor(productionUnits);
 
         foreach (var order in orders)
         {
-            distributor.DistributeOrder(order);
+            await distributor.DistributeOrder(order);
         }
 
         distributor.PrintStatus();

@@ -6,16 +6,17 @@ namespace OrderBalancer.Services.Implements
     public class OrderDistributor : IOrderDistributor
     {
 
-        private List<IProductionUnit> _productionUnits { get; set; }
+        private List<ProductionUnit> _productionUnits { get; set; }
 
         private int _currentUnit { get; set; }
 
-        public OrderDistributor(List<IProductionUnit> productionUnits)
+        public OrderDistributor(List<ProductionUnit> productionUnits)
         {
             _productionUnits = productionUnits;
+            _currentUnit = 0;
         }
 
-        public void DistributeOrder(Order order)
+        public async Task DistributeOrder(Order order)
         {
             var unit = _productionUnits[_currentUnit];
             _currentUnit = (_currentUnit + 1) % _productionUnits.Count;
@@ -23,7 +24,7 @@ namespace OrderBalancer.Services.Implements
             unit.AddOrder(order);
 
             if (!unit.IsBusy)
-                Task.Run(() => unit.Ordering());
+                await unit.Ordering();
         }
 
         public void PrintStatus()

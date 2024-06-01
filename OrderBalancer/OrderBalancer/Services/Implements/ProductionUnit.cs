@@ -23,6 +23,7 @@ namespace OrderBalancer.Services.Implements
             Id = id;
             Name = name;
             Capacity = capacity;
+            IsBusy = false;
         }
 
         public void AddOrder(Order order)
@@ -36,10 +37,7 @@ namespace OrderBalancer.Services.Implements
 
         public bool CanTakeOrder()
         {
-            if (!IsBusy)
-                return true;
-
-            return false;
+            return !IsBusy;
         }
 
         public async Task Ordering()
