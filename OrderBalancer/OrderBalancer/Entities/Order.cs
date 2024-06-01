@@ -18,5 +18,10 @@ namespace OrderBalancer.Entities
             ProcessingTime = processingTime;
         }
 
+        public override string ToString()
+        {
+            return "Order number " + Id + ", that takes " + ProcessingTime + " seconds.";
+        }
+
     }
 }

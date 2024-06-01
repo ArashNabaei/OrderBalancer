@@ -16,10 +16,5 @@ public class Program
             await distributor.DistributeOrder(order);
         }
 
-        distributor.PrintStatus();
-
-        await Task.Delay(20000);
-
-        distributor.PrintStatus();
     }
 }

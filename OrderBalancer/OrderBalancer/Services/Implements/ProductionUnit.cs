@@ -43,20 +43,15 @@ namespace OrderBalancer.Services.Implements
 
         public async Task Ordering()
         {
-            Console.WriteLine($"{Name} is processing order {CurrentOrder}");
+            Console.WriteLine($"{Name} is processing {CurrentOrder}");
 
             await Task.Delay(CurrentOrder.ProcessingTime * 1000);
 
-            Console.WriteLine($"{Name} has finished processing order {CurrentOrder}");
+            Console.WriteLine($"{Name} has finished processing {CurrentOrder}");
 
             IsBusy = false;
             CurrentOrder = null;
 
-        }
-
-        public string Status()
-        {
-            return "Production Unit : " + Id + " Name: " + Name;
         }
 
     }

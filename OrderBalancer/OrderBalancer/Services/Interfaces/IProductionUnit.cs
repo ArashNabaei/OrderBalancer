@@ -9,8 +9,6 @@ namespace OrderBalancer.Services.Interfaces
 
         bool CanTakeOrder();
 
-        string Status();
-
         Task Ordering();
 
     }

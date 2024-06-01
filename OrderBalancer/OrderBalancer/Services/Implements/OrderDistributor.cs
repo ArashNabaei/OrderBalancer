@@ -27,13 +27,5 @@ namespace OrderBalancer.Services.Implements
                 await unit.Ordering();
         }
 
-        public void PrintStatus()
-        {
-            foreach (var unit in _productionUnits)
-            {
-                Console.WriteLine(unit.Status());
-            }
-        }
-
     }
 }
